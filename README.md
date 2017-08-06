@@ -1,24 +1,8 @@
-# README
+# Schedule API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+----
+## About this project
 
-Things you may want to cover:
+This app started as part of Desenvolvendo REST / RESTful APIs com Ruby on Udemy Course. The goal of this project is learn and create API's.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More details about this course can be found at https://www.udemy.com/rubyonrails-api/.
