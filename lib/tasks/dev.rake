@@ -30,7 +30,7 @@ namespace :dev do
       )
     end
 
-    puts "Creating contacts!"
+    puts "Contacts created!"
 
   end
 end
