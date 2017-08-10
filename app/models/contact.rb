@@ -6,6 +6,8 @@ class Contact < ApplicationRecord
   end
 
   def as_json(options={})
-    super(methods: :kind_description, include: {kind: {except: :description}})
+    hash = super(methods: :kind_description, include: {kind: {except: :description}})
+    hash[:birthdate] = I18n.l(self.birthdate) if birthdate.present?
+    hash
   end
 end
