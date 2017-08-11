@@ -44,5 +44,19 @@ namespace :dev do
 
     puts "Phones created!"
 
+    ######################
+
+    puts "Creating contact address"
+
+    Contact.all.each do |contact|
+      Address.create(
+        street: Faker::Address.street_address,
+        city: Faker::Address.city,
+        contact: contact
+      )
+    end
+
+    puts "Contact Address created!"
+
   end
 end
