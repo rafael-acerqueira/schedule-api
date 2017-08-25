@@ -13,7 +13,7 @@ class AddressesController < ApplicationController
     if @contact.save
       render json: @contact.address, status: :created, location: contact_address_url(@contact)
     else
-      render json: @contact.errors
+      render json: @contact.errors, status: :unprocessable_entity
     end
   end
 
@@ -22,7 +22,7 @@ class AddressesController < ApplicationController
     if @contact.address.update(address_params)
       render json: @contact.address
     else
-      render json: @contact.errors
+      render json: @contact.errors, status: :unprocessable_entity
     end
   end
 
