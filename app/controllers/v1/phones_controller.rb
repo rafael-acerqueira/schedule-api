@@ -1,5 +1,7 @@
 module V1
   class PhonesController < ApplicationController
+    include ErrorSerializer
+
     before_action :set_contact
 
     # DELETE /contacts/1/phone
@@ -15,7 +17,7 @@ module V1
       if @contact.save
         render json: @contact.phones, status: :created, location: contact_phone_url(@contact)
       else
-        render json: @contact.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@contact.errors) #@contact.errors, status: :unprocessable_entity
       end
     end
 
@@ -25,7 +27,7 @@ module V1
       if phone.update(phone_params)
         render json: @contact.phones
       else
-        render json: @contact.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@contact.errors) #@contact.errors, status: :unprocessable_entity
       end
     end
 
